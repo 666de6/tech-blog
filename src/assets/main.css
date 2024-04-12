@@ -1,0 +1,96 @@
+@import './base.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  color: var(--color-text);
+  background: var(--color-background);
+  transition: color 0.3s, background-color 0.3s;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+#app {
+  margin: 0 auto;
+  /* padding: 0 2rem 2rem 2rem; */
+}
+
+a {
+  text-decoration: none;
+  transition: 0.4s;
+}
+h1{
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+h2{
+  font-size: 2rem;
+  font-weight: bold;
+}
+h3{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+h4{
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+
+main {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  margin-top: 5rem;
+  padding: 2rem;
+}
+section {
+  width: 60%;
+  max-width: 888px;
+  /* min-width: 850px; */
+  margin: 0 auto;
+  font-size: 1.5rem;
+}
+
+@media (hover: hover) {
+  a:hover {
+    color: var(--color-text);
+  }
+}
+@media (max-width: 1280px) {
+  section {
+    width: 80%;
+    font-size: 1.5rem;
+  } 
+}
+@media (max-width: 1024px) {
+  section {
+    width: 90%;
+    font-size: 1.5rem;
+  } 
+}
+@media (max-width: 768px) {
+  section {
+    width: 100%;
+    font-size: 1.5rem;
+  }
+}
+
+html ::-webkit-scrollbar {
+  display: none; /* Chrome Safari */
+}
+
+html {
+  scrollbar-width: none; /* firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+  overflow: auto;
+}
