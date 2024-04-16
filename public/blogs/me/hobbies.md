@@ -10,7 +10,7 @@ For nearly five years, I've immersed myself in the practice of yoga and meditati
 ## Coffee
 Before delving into programming, I was a barista. In this role, I not only mastered the art of crafting and appreciating coffee but also delved deep into the rich coffee culture. Furthermore, it provided ample opportunities to refine my communication skills through interactions with a diverse range of people. Brewing and enjoying coffee remains an integral part of my daily routine.
 &nbsp;
-![coffee](../../public/assets/hobbies/coffee.jpg)
+![coffee](/assets/hobbies/coffee.jpg)
 &nbsp;
 
 ## Learning Languages
