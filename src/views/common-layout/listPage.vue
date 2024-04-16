@@ -36,7 +36,7 @@ function initDataWhenRoute(path: string){
   state.allBlogList = state.parentObj[`${prefix}BlogList`] as Record<string, Item[]>;
   state.renderCategory = state.parentObj[`${prefix}CategoryList`] as Category[];
   const activeTabStore = JSON.parse(sessionStorage.getItem('activeTab')!); 
-  state.activeTab = activeTabStore.navId === prefix ? activeTabStore : {};
+  state.activeTab = activeTabStore?.navId === prefix ? activeTabStore : {};
   if(!state.activeTab.id){
     state.activeTab = state.renderCategory[0];
   };
