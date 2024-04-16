@@ -1,13 +1,3 @@
-/*
- * @Author: Ada J
- * @Date: 2023-09-11 14:52:42
- * @LastEditTime: 2023-10-14 17:03:07
- * @Description: 
- */
-
-const { fdatasyncSync } = require('fs');
-const { decodedTextSpanIntersectsWith } = require('typescript');
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -49,7 +39,9 @@ module.exports = {
         6000: '6s',
         9000: '9s',
         12000: '12s',
-        15000: '15s'
+        15000: '15s',
+        18000: '18s',
+         
       },
     },
     screens: {

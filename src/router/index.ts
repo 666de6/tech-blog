@@ -29,6 +29,11 @@ const router = createRouter({
       component: ListPage
     },
     {
+      path: '/blog',
+      name: 'Blog',
+      component: ListPage
+    },
+    {
       path: '/projectTemplate',
       name: 'ProjectTemplate',
       component: ProjectPage

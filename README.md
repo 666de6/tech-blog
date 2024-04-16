@@ -1,11 +1,6 @@
-<!--
- * @Author: Ada J
- * @Date: 2023-07-11 14:11:00
- * @LastEditTime: 2023-07-11 14:24:34
- * @Description: 
--->
-# blog666
-This's my personal blog. 
+# tech-blog 
+
+[Blog Website](https://ada-tech-blog.netlify.app/)
 
 ## Project Setup
 

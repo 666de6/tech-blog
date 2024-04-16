@@ -11,7 +11,7 @@ import { ref, reactive } from 'vue';
 import { type Category, type Item  } from '@/assets/config/type';
 import { blogList as projectBlogList, categoryList as projectCategoryList} from '@/assets/config/projectData';
 import { blogList as meBlogList, categoryList as meCategoryList} from '@/assets/config/meData';
-
+import { blogList as blogBlogList, categoryList as blogCategoryList} from '@/assets/config/techData';
 const route = useRoute();
 const router = useRouter();
 
@@ -21,7 +21,9 @@ const state = reactive({
     projectBlogList,
     projectCategoryList,
     meBlogList,
-    meCategoryList
+    meCategoryList,
+    blogBlogList,
+    blogCategoryList
   } as Record<string, Record<string, Item[]> | Category[]>,
   mdFile: ''
 })

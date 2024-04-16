@@ -10,6 +10,7 @@ import { onMounted, reactive, watchEffect } from "vue";
 import { type Category, type Item  } from "@/assets/config/type";
 import { blogList as projectBlogList, categoryList as projectCategoryList} from '@/assets/config/projectData';
 import { blogList as meBlogList, categoryList as meCategoryList} from '@/assets/config/meData';
+import { blogList as blogBlogList, categoryList as blogCategoryList} from '@/assets/config/techData';
 import IconLink from '@/components/icons/IconLink.vue';
 
 const route = useRoute();
@@ -24,6 +25,8 @@ const state = reactive({
     projectCategoryList,
     meBlogList,
     meCategoryList,
+    blogBlogList,
+    blogCategoryList
   } as Record<string, Record<string, Item[]> | Category[]>
 })
 watchEffect(() => (route.path !== '/' && route.path !== '/detail' && route.path !== '/projectTemplate') && initDataWhenRoute(route.path));

@@ -84,7 +84,7 @@ const showCarousel = state.slideList[itemId.value as string] == null ? false : t
 <template>
     <section class="post-sec text-[var(--color-heading)]">
       <VueMarkdown :md-file-path="state.mdFile" />
-      <Carousel v-show="showCarousel" v-bind="state.settings" :breakpoints="itemId === '1' && state.breakpoints">
+      <Carousel v-show="showCarousel" v-bind="state.settings" :breakpoints="itemId === '1' ? state.breakpoints : {}">
         <Slide v-for="(slide, index) in state.slideList[itemId as string]" :key="index">
           <div class="carousel__item">
             <img :src="slide" alt="">

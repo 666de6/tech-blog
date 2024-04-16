@@ -22,37 +22,43 @@
           <span style="font-weight: bold;"> > </span>
           <span>
             <span style="color: orange;">Hello World! </span>
-            <span>I'm Ada</span>
-            <span class="max-md:hidden">, a frontend developer, a minimalist. </span>
+            <span>I'm Ada.</span>
           </span>
         </p>
-        <p class="max-md:hidden opacity-0 animate-type-mid animate-delay-3000 animate-fill-forwards">
+        <p class="opacity-0 animate-type-mid animate-delay-3000 animate-fill-forwards">
+          <span style="font-weight: bold;"> > </span>
+          <span>
+            A frontend developer.
+          </span>
+          <span class="max-md:hidden">A minimalist. </span> 
+        </p>
+        <p class="max-md:hidden opacity-0 animate-type-mid animate-delay-6000 animate-fill-forwards">
           <span style="font-weight: bold;"> > </span>
           <span>
             Love learning, coding and trying new things. 
           </span> 
         </p>
         <br />
-        <p class="max-md:hidden opacity-0 animate-type-mid animate-delay-6000 animate-fill-forwards">
+        <p class="max-md:hidden opacity-0 animate-type-mid animate-delay-9000 animate-fill-forwards">
           <span style="font-weight: bold;"> > </span>
           <span>
             Live as if you were to die tomorrow.
           </span>
         </p>
-        <p class="max-md:hidden opacity-0 animate-type-mid animate-delay-9000 animate-fill-forwards">
+        <p class="max-md:hidden opacity-0 animate-type-mid animate-delay-12000 animate-fill-forwards">
           <span style="font-weight: bold;"> > </span>
           <span>
             Learn as if you were to live forever.
           </span>
         </p>
-        <p class="opacity-0 animate-type-mid max-md:animate-delay-3000 animate-delay-12000 animate-fill-forwards">
+        <p class="opacity-0 animate-type-mid max-md:animate-delay-6000 animate-delay-15000 animate-fill-forwards">
           <span style="font-weight: bold;"> > </span>
           <span style="color: orange;">
             爱生活如濒死，求大道若永生。
           </span>
         </p>
         <br />
-        <p class="opacity-0 animate-type-norm max-md:animate-delay-6000 animate-delay-15000 animate-fill-forwards">
+        <p class="opacity-0 animate-type-norm max-md:animate-delay-9000 animate-delay-18000 animate-fill-forwards">
           <span style="font-weight: bold;"> > </span>
           <span>
             <span style="color: orange;">Enjoy life! Enjoy coding!</span>

@@ -14,6 +14,7 @@ import LogoLight from './icons/LogoLight.vue';
 import IconTech from './icons/IconTech.vue';
 import IconMe from './icons/IconMe.vue';
 import IconGitHub from './icons/IconGitHub.vue';
+import IconBlog from './icons/IconBlog.vue'
 
 const route = useRoute();
 const state = reactive({
@@ -29,6 +30,12 @@ const state = reactive({
       name: '<Project/>',
       route: '/project',
       icon: shallowRef(IconTech)
+    },
+    {
+      id: '3',
+      name: '<Blog/>',
+      route: '/blog',
+      icon: shallowRef(IconBlog)
     }
   ],
 
