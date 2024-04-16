@@ -23,7 +23,7 @@
           <span>
             <span style="color: orange;">Hello World! </span>
             <span>I'm Ada</span>
-            <span class="max-md:hidden">, a minimalist, a programmer. </span>
+            <span class="max-md:hidden">, a frontend developer, a minimalist. </span>
           </span>
         </p>
         <p class="max-md:hidden opacity-0 animate-type-mid animate-delay-3000 animate-fill-forwards">

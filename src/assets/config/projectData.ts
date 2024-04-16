@@ -9,17 +9,20 @@ export const categoryList: Category[] = [
   {
     id: 'working-project',
     name: 'For work',
-    active: true
+    active: true,
+    navId: 'project'
   },
   {
     id: 'learning-project',
     name: 'For learn',
-    active: false
+    active: false,
+    navId: 'project'
   },
   {
     id: 'fun-project',
     name: 'For fun',
-    active: false
+    active: false,
+    navId: 'project'
   },
    
 ]
@@ -28,14 +31,14 @@ export const blogList: Record<string, Item[]> =  {
     {
       id: '1',
       parentId: 'working-project',
-      name: 'Xuyao mini-app.',
+      name: 'XuYao Mini App.',
       url: '/blogs/project/xuyao.md',
       time: '',
       date: '',
       category: 'project'
     },
     {
-      id: '3',
+      id: '2',
       parentId: 'working-project',
       name: 'Frontend Note.',
       url: 'https://ada-frontend-note.netlify.app/',
@@ -45,10 +48,10 @@ export const blogList: Record<string, Item[]> =  {
       category: 'project'
     },
     {
-      id: '4',
+      id: '3',
       parentId: 'working-project',
-      name: 'DHC-UI.',
-      url: '/blogs/dhc-ui.md',
+      name: 'DHC UI Library.',
+      url: '/blogs/project/dhc-ui.md',
       time: '',
       date: '',
       category: 'project'
@@ -56,7 +59,7 @@ export const blogList: Record<string, Item[]> =  {
   ],
   'learning-project': [
     {
-      id: '1',
+      id: '11',
       parentId: 'learning-project',
       name: 'Blog Website(full stack with Appwrite).',
       url: 'https://github.com/666de6/react-with-appwrite',
@@ -66,10 +69,10 @@ export const blogList: Record<string, Item[]> =  {
       category: 'project'
     },
     {
-      id: '2',
+      id: '12',
       parentId: 'learning-project',
       name: 'Online Course.',
-      url: '/blogs/online-course.md',
+      url: '/blogs/project/online-course.md',
       time: '',
       date: '',
       category: 'project'
@@ -77,7 +80,7 @@ export const blogList: Record<string, Item[]> =  {
   ],
   'fun-project': [
     {
-      id: '1',
+      id: '21',
       parentId: 'fun-project',
       name: 'Ming Grapher.',
       url: 'https://github.com/666de6/mind-grapher',
@@ -87,10 +90,10 @@ export const blogList: Record<string, Item[]> =  {
       category: 'project'
     },
     {
-      id: '2',
+      id: '22',
       parentId: 'fun-project',
       name: 'Terminal Flashcard.',
-      url: '/blogs/terminal-card.md',
+      url: '/blogs/project/terminal-card.md',
       time: '',
       date: '',
       category: 'project'

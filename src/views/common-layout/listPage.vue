@@ -9,8 +9,6 @@ import { useRoute, useRouter } from 'vue-router';
 import { onMounted, reactive, watchEffect } from "vue";
 import { type Category, type Item  } from "@/assets/config/type";
 import { blogList as projectBlogList, categoryList as projectCategoryList} from '@/assets/config/projectData';
-import { blogList as lifeBlogList, categoryList as lifeCategoryList} from '@/assets/config/lifeData';
-import { blogList as langBlogList, categoryList as langCategoryList} from '@/assets/config/langData';
 import { blogList as meBlogList, categoryList as meCategoryList} from '@/assets/config/meData';
 import IconLink from '@/components/icons/IconLink.vue';
 
@@ -18,15 +16,12 @@ const route = useRoute();
 const router = useRouter();
 const state = reactive({
   renderCategory: [] as Category[],
+  activeTab: {} as Category,
   renderBlog: [] as Item[],
   allBlogList: {} as Record<string, Item[]>,
   parentObj:{
     projectBlogList,
     projectCategoryList,
-    lifeBlogList,
-    lifeCategoryList,
-    langBlogList,
-    langCategoryList,
     meBlogList,
     meCategoryList,
   } as Record<string, Record<string, Item[]> | Category[]>
@@ -37,13 +32,22 @@ function initDataWhenRoute(path: string){
   const prefix = path.split('/')[1];
   state.allBlogList = state.parentObj[`${prefix}BlogList`] as Record<string, Item[]>;
   state.renderCategory = state.parentObj[`${prefix}CategoryList`] as Category[];
-  changeTab(state.renderCategory[0])
+  const activeTabStore = JSON.parse(sessionStorage.getItem('activeTab')!); 
+  state.activeTab = activeTabStore.navId === prefix ? activeTabStore : {};
+  if(!state.activeTab.id){
+    state.activeTab = state.renderCategory[0];
+  };
+  changeTab(state.activeTab);
 }
 function changeTab(item: Category){
   state.renderCategory.forEach(element => {
     element.active = false;
+    if(element.id === item.id){
+      element.active = true;
+    }
   });
-  item.active = true;
+  state.activeTab = item;
+  sessionStorage.setItem('activeTab', JSON.stringify(item));
   state.renderBlog = state.allBlogList[item.id as keyof Item];
 }
 function goToDetail(blog: Item){
@@ -72,7 +76,7 @@ function goToDetail(blog: Item){
   }
 }
 onMounted(() => {
-  
+
 })
 </script>
 <template>

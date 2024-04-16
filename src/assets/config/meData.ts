@@ -9,7 +9,8 @@ export const categoryList: Category[] = [
   {
     id: 'resume',
     name: 'Ada Jiang',
-    active: false
+    active: false,
+    navId: 'me'
   },
 ]
 export const blogList: Record<string, Item[]> =  {
@@ -17,8 +18,8 @@ export const blogList: Record<string, Item[]> =  {
     {
       id: '1',
       parentId: 'resume',
-      name: 'My resume.',
-      url: '/blogs/me.md',
+      name: 'Me as a frontend developer.',
+      url: '/blogs/me/me.md',
       time: '',
       date: '',
       category: 'me'
@@ -26,8 +27,8 @@ export const blogList: Record<string, Item[]> =  {
     {
       id: '2',
       parentId: 'resume',
-      name: 'My hobbies.',
-      url: '/blogs/hobbies.md',
+      name: 'Me outside of work.',
+      url: '/blogs/me/hobbies.md',
       time: '',
       date: '',
       category: 'me'

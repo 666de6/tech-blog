@@ -10,8 +10,6 @@ import { useRoute, useRouter } from 'vue-router';
 import { ref, reactive } from 'vue';
 import { type Category, type Item  } from '@/assets/config/type';
 import { blogList as projectBlogList, categoryList as projectCategoryList} from '@/assets/config/projectData';
-import { blogList as lifeBlogList, categoryList as lifeCategoryList} from '@/assets/config/lifeData';
-import { blogList as langBlogList, categoryList as langCategoryList} from '@/assets/config/langData';
 import { blogList as meBlogList, categoryList as meCategoryList} from '@/assets/config/meData';
 import 'vue3-carousel/dist/carousel.css';
 import { Carousel, Navigation, Slide } from 'vue3-carousel';
@@ -26,10 +24,6 @@ const state = reactive({
   parentObj:{
     projectBlogList,
     projectCategoryList,
-    lifeBlogList,
-    lifeCategoryList,
-    langBlogList,
-    langCategoryList,
     meBlogList,
     meCategoryList
   } as Record<string, Record<string, Item[]> | Category[]>,
@@ -48,20 +42,34 @@ const state = reactive({
     },
     // 1024 and up
     1024: {
-      itemsToShow: 5,
+      itemsToShow: 3.5,
       snapAlign: 'start',
     },
   },
-  slideList: [
-    '../../../public/assets/xuyao/IMG_7323.PNG',
-    '../../../public/assets/xuyao/IMG_7324.PNG',
-    '../../../public/assets/xuyao/IMG_7325.PNG',
-    '../../../public/assets/xuyao/IMG_7326.PNG',
-    '../../../public/assets/xuyao/IMG_7327.PNG',
-    '../../../public/assets/xuyao/IMG_7328.PNG',
-    '../../../public/assets/xuyao/IMG_7329.PNG',
-    '../../../public/assets/xuyao/IMG_7330.PNG',
-  ]
+  slideList: {
+    '1': [
+      '../../../public/assets/xuyao/IMG_7323.PNG',
+      '../../../public/assets/xuyao/IMG_7324.PNG',
+      '../../../public/assets/xuyao/IMG_7325.PNG',
+      '../../../public/assets/xuyao/IMG_7326.PNG',
+      '../../../public/assets/xuyao/IMG_7327.PNG',
+      '../../../public/assets/xuyao/IMG_7328.PNG',
+      '../../../public/assets/xuyao/IMG_7329.PNG',
+      '../../../public/assets/xuyao/IMG_7330.PNG',
+    ],
+    '3': [
+      '../../../public/assets/dhc/01.png',
+      '../../../public/assets/dhc/02.png',
+      '../../../public/assets/dhc/03.png',
+      '../../../public/assets/dhc/04.png',
+      '../../../public/assets/dhc/05.png',
+      
+    ],
+    // '12': [
+
+    // ]
+  } as Record<string, string[]>
+    
 })
 
 const itemId = ref(route.query.id);
@@ -69,14 +77,15 @@ const temData = state.parentObj[`${route.query.ct}BlogList`] as Record<string, I
 state.allBlogList = temData[`${route.query.tab}`];
 
 state.mdFile = state.allBlogList.find(item => item.id === itemId.value)?.url || '';
+const showCarousel = state.slideList[itemId.value as string] == null ? false : true;
 
 
 </script>
 <template>
     <section class="post-sec text-[var(--color-heading)]">
       <VueMarkdown :md-file-path="state.mdFile" />
-      <Carousel v-bind="state.settings" :breakpoints="state.breakpoints">
-        <Slide v-for="(slide, index) in state.slideList" :key="index">
+      <Carousel v-show="showCarousel" v-bind="state.settings" :breakpoints="itemId === '1' && state.breakpoints">
+        <Slide v-for="(slide, index) in state.slideList[itemId as string]" :key="index">
           <div class="carousel__item">
             <img :src="slide" alt="">
           </div>

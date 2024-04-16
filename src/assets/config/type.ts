@@ -17,5 +17,6 @@ export type Item = {
 export type Category = {
   id: string,
   name: string,
-  active: boolean
+  active: boolean,
+  navId: string
 }

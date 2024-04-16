@@ -12,8 +12,8 @@ import IconLight from './icons/IconLight.vue';
 import LogoDark from './icons/LogoDark.vue';
 import LogoLight from './icons/LogoLight.vue';
 import IconTech from './icons/IconTech.vue';
-import IconLang from './icons/IconLang.vue';
-import IconLife from './icons/IconLife.vue';
+import IconMe from './icons/IconMe.vue';
+import IconGitHub from './icons/IconGitHub.vue';
 
 const route = useRoute();
 const state = reactive({
@@ -22,21 +22,14 @@ const state = reactive({
       id: '1',
       name: '<Me/>',
       route: '/me',
-      icon: shallowRef(IconTech)
+      icon: shallowRef(IconMe)
     },
     {
       id: '2',
       name: '<Project/>',
       route: '/project',
-      icon: shallowRef(IconLang)
-    },
-    // {
-    //   id: '3',
-    //   name: '<Life/>',
-    //   route: '/life',
-    //   icon: shallowRef(IconLife)
-
-    // }
+      icon: shallowRef(IconTech)
+    }
   ],
 
 })
@@ -81,10 +74,13 @@ function toggleTheme() {
   document.documentElement.classList.toggle('dark');
 };
 
+function goGitHub(){
+  window.open('https://github.com/666de6');
+}
 
 </script>
 <template>
-  <div class="nav-bar w-full h-20 fixed top-0 flex items-center justify-between bg-[var(--color-background)]">
+  <div class="nav-bar w-full h-20 fixed top-0 z-10 flex items-center justify-between bg-[var(--color-background)]">
     <RouterLink to="/">
       <div class="w-10">
         <component :is="logoUrl" />
@@ -92,16 +88,19 @@ function toggleTheme() {
     </RouterLink>
     <nav class="font-mono flex justify-end items-center text-base font-bold text-[var(--color-heading)]">
       <div
-        class="mr-8"
+        class="mr-6"
         v-for="item in state.navList"
         :key="item.id"
         :class="(item.route === route.path) || (item.route === '/' + route.query.ct) ? 'is-active' : 'normal'"
       >
       <RouterLink :to="item.route">
-          <span class="max-md:hidden">{{ item.name }}</span>
-          <component :is="item.icon" class="min-md:hidden"/>
-        </RouterLink>
+        <span class="max-md:hidden">{{ item.name }}</span>
+        <component :is="item.icon" class="min-md:hidden"/>
+      </RouterLink>
         
+      </div>
+      <div>
+        <IconGitHub @click="goGitHub" class="cursor-pointer mr-6"/>
       </div>
       <!-- toggle theme -->
       <div @click="toggleTheme" class="cursor-pointer flex items-center">

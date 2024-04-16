@@ -10,8 +10,6 @@ import { useRoute, useRouter } from 'vue-router';
 import { ref, reactive } from 'vue';
 import { type Category, type Item  } from '@/assets/config/type';
 import { blogList as projectBlogList, categoryList as projectCategoryList} from '@/assets/config/projectData';
-import { blogList as lifeBlogList, categoryList as lifeCategoryList} from '@/assets/config/lifeData';
-import { blogList as langBlogList, categoryList as langCategoryList} from '@/assets/config/langData';
 import { blogList as meBlogList, categoryList as meCategoryList} from '@/assets/config/meData';
 
 const route = useRoute();
@@ -22,10 +20,6 @@ const state = reactive({
   parentObj:{
     projectBlogList,
     projectCategoryList,
-    lifeBlogList,
-    lifeCategoryList,
-    langBlogList,
-    langCategoryList,
     meBlogList,
     meCategoryList
   } as Record<string, Record<string, Item[]> | Category[]>,
