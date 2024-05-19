@@ -5,6 +5,7 @@
  * @Description: 
  */
 import { type Category, type Item  } from "./type";
+import { newId } from ".";
 export const categoryList: Category[] = [
   {
     id: 'learning',
@@ -16,7 +17,7 @@ export const categoryList: Category[] = [
 export const blogList: Record<string, Item[]> =  {
   learning: [
     {
-      id: '1',
+      id: newId(),
       parentId: 'learning',
       name: 'My 6-Step Strategy to Learn New Technology.',
       url: '/blogs/tech/how_to_learn.md',

@@ -10,7 +10,7 @@ Seasoned front-end engineer with 5 years of hands-on experience. A proactive sel
 
 <font color="#999">Dec 2023 - Present</font>
 
-● Engineered an enterprise-grade bidding platform, comprising a robust Web admin system and [<font color="orange">a lightweight mobile mini-app</font>](/projectTemplate?ct=project&tab=working-project&id=1), optimizing bidding workflows and increased efficiency by 50%.
+● Engineered an enterprise-grade bidding platform, comprising a robust Web admin system and [<font color="orange">a lightweight mobile WeChat mini-program</font>](/projectTemplate?ct=project&tab=working-project&id=1), optimizing bidding workflows and increased efficiency by 50%.
 
 ● Spearheaded frontend design and development efforts, including user authentication, permission control, Optical Character Recognition (OCR), etc.
 

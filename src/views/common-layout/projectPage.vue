@@ -7,7 +7,7 @@
 <script setup lang="ts">
 import VueMarkdown from '@/components/VueMarkdown.vue';
 import { useRoute, useRouter } from 'vue-router';
-import { ref, reactive } from 'vue';
+import { ref, reactive, computed } from 'vue';
 import { type Category, type Item  } from '@/assets/config/type';
 import { blogList as projectBlogList, categoryList as projectCategoryList} from '@/assets/config/projectData';
 import { blogList as meBlogList, categoryList as meCategoryList} from '@/assets/config/meData';
@@ -47,7 +47,7 @@ const state = reactive({
     },
   },
   slideList: {
-    '1': [
+    'xuyao': [
       '/assets/xuyao/IMG_7323.PNG',
       '/assets/xuyao/IMG_7324.PNG',
       '/assets/xuyao/IMG_7325.PNG',
@@ -57,17 +57,14 @@ const state = reactive({
       '/assets/xuyao/IMG_7329.PNG',
       '/assets/xuyao/IMG_7330.PNG',
     ],
-    '3': [
+    'dhc-ui': [
       '/assets/dhc/01.png',
       '/assets/dhc/02.png',
       '/assets/dhc/03.png',
       '/assets/dhc/04.png',
       '/assets/dhc/05.png',
       
-    ],
-    // '12': [
-
-    // ]
+    ]
   } as Record<string, string[]>
     
 })
@@ -84,7 +81,7 @@ const showCarousel = state.slideList[itemId.value as string] == null ? false : t
 <template>
     <section class="post-sec text-[var(--color-heading)]">
       <VueMarkdown :md-file-path="state.mdFile" />
-      <Carousel v-show="showCarousel" v-bind="state.settings" :breakpoints="itemId === '1' ? state.breakpoints : {}">
+      <Carousel v-show="showCarousel" v-bind="state.settings" :breakpoints="itemId === 'xuyao' ? state.breakpoints : {}">
         <Slide v-for="(slide, index) in state.slideList[itemId as string]" :key="index">
           <div class="carousel__item">
             <img :src="slide" alt="">
